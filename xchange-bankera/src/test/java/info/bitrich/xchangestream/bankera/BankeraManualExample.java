@@ -15,12 +15,12 @@ public class BankeraManualExample {
 
       exchange.connect().blockingAwait();
       exchange.getStreamingMarketDataService()
-          .getOrderBook(CurrencyPair.ETH_BTC)
+          .getOrderBook(CurrencyPair.BNK_USDT)
           .subscribe(orderBook -> LOGGER.debug("ORDERBOOK: {}", orderBook.toString()),
               throwable -> LOGGER.error("ERROR in getting order book: ", throwable));
 
       exchange.getStreamingMarketDataService()
-          .getTrades(CurrencyPair.ETH_BTC)
+          .getTrades(CurrencyPair.DASH_USDT)
           .subscribe(trade ->LOGGER.debug("TRADES: {}", trade.toString()),
               throwable -> LOGGER.error("ERROR in getting trade ", throwable));
 
